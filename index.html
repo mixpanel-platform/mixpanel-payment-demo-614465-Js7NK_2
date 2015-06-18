@@ -9,7 +9,9 @@
   <body class="mixpanel-platform-body">
     <h1>Hello, World!</h1>
     <script>
-      // Run queries and display results here
+      MP.api.segment('$top_events', null, {from: moment().subtract(1, 'days'), unit: 'day'}).done(function(results) {
+        console.log(results.values());
+    });
     </script>
   </body>
 </html>
